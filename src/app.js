@@ -10,6 +10,7 @@ const viewPath = path.join(__dirname,"../src/templates/view")
 
 const partialsPath = path.join(__dirname,"../src/templates/partials")
 const app = express();
+const port = process.env.PORT;
 
 //setup handlerbar engine or view location
 app.set('view engine','hbs');
@@ -86,6 +87,6 @@ app.get('*',(req,res) =>{
     })
 })
 
-app.listen(3000,() => {
+app.listen(port || 3000,() => {
     console.log("server is up on port 300");
 })
